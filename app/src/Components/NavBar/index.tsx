@@ -8,8 +8,6 @@ function NavBar() {
     i18n.changeLanguage(selectedLanguage, (err, t) => {
       if (err) {
         console.error('Erro ao mudar de idioma:', err);
-      } else {
-        console.log('Idioma alterado para:', selectedLanguage);
       }
     });
   };
@@ -22,11 +20,11 @@ function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Blog</Navbar.Brand>
+        <Navbar.Brand href="/">bits-n-bytes</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link href="/AboutMe">{t('Nav.AboutMe')}</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Select onChange={(e) => handleLanguageChange(e.target.value)}>

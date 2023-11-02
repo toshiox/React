@@ -11,6 +11,9 @@ i18n
     resources: {
       en: {
         translation: {
+          Nav: {
+            AboutMe: "About Me"
+          },
           Languages: {
             English: 'English',
             Portuguese: 'Portuguese'
@@ -27,6 +30,9 @@ i18n
       },
       pt: {
         translation: {
+          Nav: {
+            AboutMe: "Sobre Mim"
+          },
           Languages: {
             English: 'Inglês',
             Portuguese: 'Português'
