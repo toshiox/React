@@ -12,7 +12,8 @@ i18n
       en: {
         translation: {
           Nav: {
-            AboutMe: "About Me"
+            AboutMe: "About Me",
+            TextEditor: "TextEditor"
           },
           Languages: {
             English: 'English',
@@ -31,7 +32,8 @@ i18n
       pt: {
         translation: {
           Nav: {
-            AboutMe: "Sobre Mim"
+            AboutMe: "Sobre Mim",
+            TextEditor: "Editor de Texto"
           },
           Languages: {
             English: 'Inglês',
