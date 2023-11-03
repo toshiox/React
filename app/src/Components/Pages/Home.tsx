@@ -6,7 +6,7 @@ function Home(){
         <Row xs={1} md={2} className="g-4">
           {Array.from({ length: 2 }).map((_, idx) => (
             <Col key={idx}>
-              <Card>
+              <Card className='card'>
                 {/* <Card.Img className="material-icon" variant="top" src={require('./Images/csharp.png')} /> */}
                 <Card.Body>
                   <Card.Title>Card title</Card.Title>

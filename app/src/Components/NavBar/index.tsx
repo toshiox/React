@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Navbar, Container, Nav, Form, Button } from 'react-bootstrap';
-
+import {Link} from 'react-router-dom';
 function NavBar() {
   const { t, i18n } = useTranslation();
 
@@ -20,12 +20,24 @@ function NavBar() {
   return (
     <Navbar  bg="dark" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="/">bits-n-bytes</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/Home">
+            bits-n-bytes
+          </Link>
+          </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto" style={{ maxHeight: '100px' }} navbarScroll>
-            <Nav.Link href="/AboutMe">{t('Nav.AboutMe')}</Nav.Link>
-            <Nav.Link href="/TextEditor">{t('Nav.TextEditor')}</Nav.Link>
+            <Nav.Link>
+              <Link to="/AboutMe">
+                {t('Nav.AboutMe')}
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/TextEditor">
+                {t('Nav.TextEditor')}
+              </Link>
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Select onChange={(e) => handleLanguageChange(e.target.value)}>
