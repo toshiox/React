@@ -21,7 +21,7 @@ function NavBar() {
     <Navbar  bg="dark" data-bs-theme="dark">
       <Container fluid>
         <Navbar.Brand>
-          <Link to="/Home">
+          <Link to="/Home"  style={{ textDecoration: 'none' }}>
             bits-n-bytes
           </Link>
           </Navbar.Brand>
@@ -29,12 +29,12 @@ function NavBar() {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto" style={{ maxHeight: '100px' }} navbarScroll>
             <Nav.Link>
-              <Link to="/AboutMe">
+              <Link to="/AboutMe" style={{ textDecoration: 'none' }}>
                 {t('Nav.AboutMe')}
               </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/TextEditor">
+              <Link to="/TextEditor"  style={{ textDecoration: 'none' }}>
                 {t('Nav.TextEditor')}
               </Link>
             </Nav.Link>
