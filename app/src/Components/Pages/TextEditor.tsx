@@ -10,10 +10,10 @@ const TextEditor: React.FC = () => {
     <div>
       <Editor
         initialValue="<p>Seu conteúdo inicial aqui</p>"
-        apiKey="ppdm3waziny1vi10yhh3re50li27artiwhftdhp0ah0uxvef" // Substitua pela sua chave de API do TinyMCE
+        apiKey="ppdm3waziny1vi10yhh3re50li27artiwhftdhp0ah0uxvef"
         init={{
-          height: 500, // Altura do editor
-          menubar: true, // Barra de menus
+          height: 500,
+          menubar: true,
           plugin_version: '6.6.0',
           plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table code help wordcount',
           toolbar: 'undo redo | formatselect | ' +
