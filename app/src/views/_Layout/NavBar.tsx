@@ -1,15 +1,21 @@
 import { useTranslation } from 'react-i18next';
 import { Navbar, Container, Nav, Form, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+import { languageActions } from '../../Store/Languages';
+
 function NavBar() {
   const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
 
-  const handleLanguageChange = (selectedLanguage:string) => {
-    i18n.changeLanguage(selectedLanguage, (err, t) => {
+  const handleLanguageChange = (newLanguage: string) => {
+    i18n.changeLanguage(newLanguage, (err, t) => {
       if (err) {
         console.error('Erro ao mudar de idioma:', err);
       }
     });
+    dispatch(languageActions.setLanguage({ value: newLanguage }));
   };
 
   const languageOptions = [
@@ -21,22 +27,19 @@ function NavBar() {
     <Navbar  bg="dark" data-bs-theme="dark">
       <Container fluid>
         <Navbar.Brand>
-          <Link to="/Home"  style={{ textDecoration: 'none' }}>
+          <Link to="/Home" style={{ textDecoration: 'none' }}>
             bits-n-bytes
           </Link>
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto" style={{ maxHeight: '100px' }} navbarScroll>
-            <Nav.Link>
-              <Link to="/AboutMe" style={{ textDecoration: 'none' }}>
+          <Nav.Link as={Link} to="/AboutMe">
+
                 {t('Nav.AboutMe')}
-              </Link>
             </Nav.Link>
-            <Nav.Link>
-              <Link to="/TextEditor"  style={{ textDecoration: 'none' }}>
+            <Nav.Link as={Link} to="/TextEditor">
                 {t('Nav.TextEditor')}
-              </Link>
             </Nav.Link>
           </Nav>
           <Form className="d-flex">

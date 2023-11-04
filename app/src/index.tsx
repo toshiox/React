@@ -9,7 +9,10 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Home from './views/Home/Home';
 import AboutMe from './views/AboutMe/AboutMe';
 import TextEditor from './views/TextEditor/TextEditor';
+import Redux from './views/redux';
 import { createBrowserRouter, RouterProvider  }from "react-router-dom";
+import {Provider} from 'react-redux';
+import {store} from './Store/index';
 
 const router =  createBrowserRouter([
   {
@@ -27,6 +30,10 @@ const router =  createBrowserRouter([
     {
       path:'/TextEditor',
       element: <TextEditor />
+    },
+    {
+      path:'/Redux',
+      element: <Redux addNote={alert}/>
     }
   ],
   }]);
@@ -36,7 +43,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <Provider store={store}>
+      <RouterProvider router={router}/>
+    </Provider>
   </React.StrictMode>
 );
 
