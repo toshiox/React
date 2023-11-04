@@ -4,7 +4,7 @@ import {Card,Col, Row} from 'react-bootstrap';
 function Home(){
     return (
         <Row xs={1} md={2} className="g-4">
-          {Array.from({ length: 10 }).map((_, idx) => (
+          {Array.from({ length: 6 }).map((_, idx) => (
             <Col key={idx}>
               <Card className='card'>
                 {/* <Card.Img className="material-icon" variant="top" src={require('./Images/csharp.png')} /> */}
