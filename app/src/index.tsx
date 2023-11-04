@@ -2,13 +2,13 @@ import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import './Configs/i18n';
+import './Components/LanguageSwitcher/i18n';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-import Home from './Components/Pages/Home';
-import AboutMe from './Components/Pages/AboutMe';
-import TextEditor from './Components/Pages/TextEditor';
+import Home from './views/Home/Home';
+import AboutMe from './views/AboutMe/AboutMe';
+import TextEditor from './views/TextEditor/TextEditor';
 import { createBrowserRouter, RouterProvider  }from "react-router-dom";
 
 const router =  createBrowserRouter([

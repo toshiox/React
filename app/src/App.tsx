@@ -1,7 +1,7 @@
 import './App.css';
 
-import Nav from './Components/NavBar/index';
-import Footer from './Components/Footer/index';
+import Nav from './views/_Layout/NavBar';
+import Footer from './views/_Layout/Footer';
 import {Outlet} from 'react-router-dom';
 function App() {
   return (
