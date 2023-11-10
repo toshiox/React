@@ -1,6 +1,6 @@
 import {useSelector} from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { RootState } from '../../Store/index'; // Importe o tipo RootState da sua store
+import { RootState } from '../../Store/index';
 
 function AboutMe() {
     const { t } = useTranslation();

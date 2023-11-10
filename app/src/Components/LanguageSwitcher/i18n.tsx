@@ -26,6 +26,9 @@ i18n
             PlaceHolders:{
               KeyWord: "Keyword"
             }
+          },
+          Home:{
+            ReadingTime: "Reading Time"
           }
         },
       },
@@ -46,6 +49,9 @@ i18n
             PlaceHolders:{
               KeyWord: "Palavra chave"
             }
+          },
+          Home:{
+            ReadingTime: "Tempo de Leitura"
           }
         },
       },
