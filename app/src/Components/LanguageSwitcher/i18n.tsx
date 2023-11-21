@@ -29,6 +29,9 @@ i18n
           },
           Home:{
             ReadingTime: "Reading Time"
+          },
+          Loading:{
+            Message: "Loading"
           }
         },
       },
@@ -52,6 +55,9 @@ i18n
           },
           Home:{
             ReadingTime: "Tempo de Leitura"
+          },
+          Loading:{
+            Message: "Carregando"
           }
         },
       },
