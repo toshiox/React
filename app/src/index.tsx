@@ -2,7 +2,7 @@ import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import './Components/LanguageSwitcher/i18n';
+import './Components/languageSwitcher/i18n';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 

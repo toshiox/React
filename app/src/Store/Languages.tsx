@@ -9,7 +9,6 @@ const initialState: ILanguages = {
 };
 const languagesInfo = {
     getLanguage: (state: RootState) => {
-        console.log(state);
         return state;
     }
 };
@@ -25,5 +24,4 @@ const languageSlice = createSlice({
   });
   export { languagesInfo };
   export const languageActions = languageSlice.actions;
-
   export default languageSlice.reducer;
