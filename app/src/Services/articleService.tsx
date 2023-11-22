@@ -11,12 +11,9 @@ export class ArticleService {
   async get(endpoint: string, selectedLanguage: string) {
     try {
       var redis = await this.getRedis(selectedLanguage);
-      console.log(redis)
       if(redis !== undefined && redis.length > 0){
-        console.log("redis");
         return redis;
       }
-      console.log("mongo");
       const response = await axios.get(`${this.baseURL}${endpoint}/${selectedLanguage}`);
       return response.data.data;
     } catch (error) {

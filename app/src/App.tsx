@@ -4,6 +4,7 @@ import Nav from './views/_Layout/NavBar';
 import Footer from './views/_Layout/Footer';
 import AboutMe from './views/AboutMe/AboutMe';
 import TextEditor from './views/TextEditor/TextEditor';
+import NotFound from './views/NotFound/index'; 
 import Loading from './Components/loading/index'; 
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -13,7 +14,7 @@ function App() {
   const isLoading = useSelector((state: RootState) => state.Loading.isLoading);
 
   useEffect(() => {
-    const fetchData = async () => {console.log(isLoading);};
+    const fetchData = async () => {};
     fetchData();
   },[isLoading]);
   
@@ -26,6 +27,8 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/AboutMe" element={<AboutMe />} />
         <Route path="/TextEditor" element={<TextEditor />} />
+        <Route path="*" element={<Navigate to="/not-found" />} />
+        <Route path="/not-found" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

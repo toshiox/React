@@ -5,7 +5,7 @@ export interface ILoading {
     isLoading:boolean;
 }
 const initialState: ILoading = {
-    isLoading: true
+    isLoading: false
 };
 const loadingInfo = {
     getLoading: (state: RootState) => {

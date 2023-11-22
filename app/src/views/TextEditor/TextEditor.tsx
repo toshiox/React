@@ -2,9 +2,7 @@ import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
 const TextEditor: React.FC = () => {
-  const handleEditorChange = (content: string) => {
-    console.log(content);
-  };
+  const handleEditorChange = () => {};
 
   return (
     <div>

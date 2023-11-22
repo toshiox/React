@@ -1,19 +1,20 @@
 import './home.css'
-import { Card, Col, Row, ListGroup } from 'react-bootstrap';
-import { useEffect, useState } from 'react';
-import { ArticleService } from '../../Services/articleService';
-import { RootState } from '../../Store/index';
-import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { RootState } from '../../Store/index';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import {loadingActions } from '../../Store/loading';
+import { Card, Col, Row, ListGroup } from 'react-bootstrap';
+import { ArticleService } from '../../Services/articleService';
 
 function Home(){
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const service = new ArticleService();
   const [articles, setArticles] = useState<any[]>([]);
   const currentLanguage = useSelector((state: RootState) => state.Languages.value);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,9 +27,9 @@ function Home(){
   },[currentLanguage]);
 
   return (
-    <>
-      <Row xs={1} md={2} className="g-4">
-        {articles.map((article: any, index) => (
+    <Row xs={1} md={2} className="g-4">
+      {articles.map((article: any, index) => (
+        <Link key={index} to={`/article/${article.id}`} style={{ textDecoration: 'none' }}>
           <Col key={index}>
             <Card className='card'>
             <Card.Body>
@@ -46,9 +47,9 @@ function Home(){
               </ListGroup>
             </Card>
           </Col>
-        ))}
-      </Row>
-    </>
+       </Link>
+      ))}
+    </Row>
   );
 }
 export default Home;

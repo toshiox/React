@@ -51,8 +51,8 @@ function NavBar() {
                 </option>
               ))}
             </Form.Select>
-            <Form.Control type="search" placeholder={t('Inputs.PlaceHolders.KeyWord')} className="me-2" aria-label="Search"/>
-            <Button variant="outline-warning">{t('Buttons.Search')}</Button>
+            {/* <Form.Control type="search" placeholder={t('Inputs.PlaceHolders.KeyWord')} className="me-2" aria-label="Search"/>
+            <Button variant="outline-warning">{t('Buttons.Search')}</Button> */}
           </Form>
         </Navbar.Collapse>
       </Container>

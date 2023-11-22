@@ -9,6 +9,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Home from './views/Home/Home';
 import AboutMe from './views/AboutMe/AboutMe';
 import TextEditor from './views/TextEditor/TextEditor';
+import NotFound from './views/NotFound/index'; 
 import { createBrowserRouter, RouterProvider  }from "react-router-dom";
 import {Provider} from 'react-redux';
 import {store} from './Store/index';
@@ -29,6 +30,10 @@ const router =  createBrowserRouter([
     {
       path:'/TextEditor',
       element: <TextEditor />
+    },
+    {
+      path:'*',
+      element: <NotFound />
     }
   ],
   }]);
