@@ -8,14 +8,13 @@ export class ArticleService {
     this.api = axios.create({ baseURL: this.baseURL });
   }
 
-  async get(endpoint: string, selectedLanguage: string) {
+  async get(selectedLanguage: string) {
     try {
       var redis = await this.getRedis(selectedLanguage);
       if(redis !== undefined && redis.length > 0){
         return redis;
       }
-      const response = await axios.get(`${this.baseURL}${endpoint}/${selectedLanguage}`);
-      return response.data.data;
+      return (await this.getDb(selectedLanguage)).data;
     } catch (error) {
       console.error('Erro ao buscar dados:', error);
     }
@@ -23,6 +22,30 @@ export class ArticleService {
   async getRedis(selectedLanguage: string) {
     try {
       const response = await axios.get(`${this.baseURL}api/redis/articles/${selectedLanguage}`);
+      return response.data;
+    } catch (error) {
+      console.error('Erro ao buscar dados:', error);
+    }
+  }
+  async getDb(selectedLanguage: string) {
+    try {
+      const response = await axios.get(`${this.baseURL}api/article/${selectedLanguage}`);
+      return response.data;
+    } catch (error) {
+      console.error('Erro ao buscar dados:', error);
+    }
+  }
+  async putArticle(content: object) {
+    try {
+      const response = await axios.put(`${this.baseURL}api/article`, content);
+      return response.data;
+    } catch (error) {
+      console.error('Erro ao atualizar dados:', error);
+    }
+  }
+  async getRedisById(id: String){
+    try {
+      const response = await axios.get(`${this.baseURL}/api/redis/${id}`);
       return response.data;
     } catch (error) {
       console.error('Erro ao buscar dados:', error);

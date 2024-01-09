@@ -5,6 +5,7 @@ import Footer from './views/_Layout/Footer';
 import AboutMe from './views/AboutMe/AboutMe';
 import TextEditor from './views/TextEditor/TextEditor';
 import NotFound from './views/NotFound/index'; 
+import ArticleContent from './views/ArticleContent/index'; 
 import Loading from './Components/loading/index'; 
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Navigate to="/Home" />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/AboutMe" element={<AboutMe />} />
+        <Route path="/Article/:id?" element={<ArticleContent/>} />
         <Route path="/TextEditor" element={<TextEditor />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
         <Route path="/not-found" element={<NotFound />} />

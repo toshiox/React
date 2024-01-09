@@ -5,21 +5,22 @@ import { useEffect, useState } from 'react';
 import { RootState } from '../../Store/index';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import {loadingActions } from '../../Store/loading';
+import { loadingActions } from '../../Store/loading';
 import { Card, Col, Row, ListGroup } from 'react-bootstrap';
 import { ArticleService } from '../../Services/articleService';
+
+const service = new ArticleService();
 
 function Home(){
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const service = new ArticleService();
   const [articles, setArticles] = useState<any[]>([]);
   const currentLanguage = useSelector((state: RootState) => state.Languages.value);
 
   useEffect(() => {
     const fetchData = async () => {
         dispatch(loadingActions.setLoading({ isLoading: true }));
-        const response = await service.get('api/article', currentLanguage);
+        const response = await service.get(currentLanguage);
         setArticles(response); 
         dispatch(loadingActions.setLoading({ isLoading: false }));
     };

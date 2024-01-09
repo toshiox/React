@@ -32,6 +32,24 @@ i18n
           },
           Loading:{
             Message: "Loading"
+          },
+          TextEditor:{
+            ArticleDescription: "Article Description",
+            Title: "Title",
+            SubTitle: "SubTitle",
+            ReadingTime: "ReadingTime",
+            Resume: "Resume",
+            Content: "Content",
+            Tags: "Tags",
+            Language: "Language",
+            Information: "Information"
+          },
+          PageNotFound: {
+            Message: "I'm sorry, page not found"
+          },
+          PageContent:{
+            Obs: "This page uses automatic translation using Azure Translator.",
+            LanguageDescription: "This article was written in:"
           }
         },
       },
@@ -58,6 +76,24 @@ i18n
           },
           Loading:{
             Message: "Carregando"
+          },
+          TextEditor:{
+            ArticleDescription: "Descrição Artigo",
+            Title: "Título ",
+            SubTitle: "Subtítulo ",
+            ReadingTime: "Tempo de Leitura",
+            Resume: "Resumo",
+            Content: "Conteúdo",
+            Tags: "Tags",
+            Language: "Linguagem",
+            Information: "Informacoes"
+          },
+          PageNotFound: {
+            Message: "Me desculpe, pagina nao existe."
+          },
+          PageContent:{
+            Obs: "Essa página usa tradução automática utilizando o Azure tradutor.",
+            LanguageDescription: "Este artigo foi escrito em:"
           }
         },
       },

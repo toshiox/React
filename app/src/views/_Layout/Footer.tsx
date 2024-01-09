@@ -1,34 +1,38 @@
-import styled from 'styled-components';
-import { SocialIcon } from 'react-social-icons';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaThreads } from "react-icons/fa6";
+import './css/Footer.css'
 
-const FooterContainer = styled.footer`
-height: 100%;
-color: white;
-padding: 1em;
-text-align: center;
-`
-const ListSocialMedia = styled.ul`
-display: flex;
-justify-content: space-around;
-width: 10%;
-margin: 1em auto;
-`
-const ItemSocialMedia = styled.li`
-list-style-type: none;
-margin-right: 5px;
-`
-function Footer() {
-    return (
-        <FooterContainer>
-            <ListSocialMedia>
-                <ItemSocialMedia>
-                    <SocialIcon url="https://github.com/toshiox"/>
-                </ItemSocialMedia>
-                <ItemSocialMedia>
-                    <SocialIcon url="https://www.linkedin.com/in/gustavo-toshio-a40213155/" />
-                </ItemSocialMedia>
-            </ListSocialMedia>
-        </FooterContainer>
-    )
-}
+const Footer = () => {
+  return (
+    <footer className="bg-dark text-light py-3">
+      <Container>
+        <Row className="justify-content-center">
+          <Col xs="auto">
+            <a href="https://github.com/toshiox" target="_blank">
+              <FaGithub size={30} className="text-light me-3" />
+            </a>
+          </Col>
+          <Col xs="auto">
+            <a href="https://www.linkedin.com/in/gustavo-toshio-a40213155/" target="_blank">
+              <FaLinkedin size={30} className="text-light" />
+            </a>
+          </Col>
+          <Col xs="auto">
+            <a href="https://www.threads.net/@gutoshio" target="_blank">
+              <FaThreads size={30} className="text-light me-3" />
+            </a>
+          </Col>
+          <Col xs="auto">
+            <a href="https://www.instagram.com/gutoshio?igsh=MW80ODM4bDc1YnhuZg==" target="_blank">
+              <FaInstagram size={30} className="text-light me-3" />
+            </a>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
+  );
+};
+
 export default Footer;

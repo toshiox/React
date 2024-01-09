@@ -1,6 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit'
-import Languages from './Languages';
 import Loading from './loading';
+import Languages from './Languages';
+import { configureStore } from '@reduxjs/toolkit';
 export const store = configureStore({
   reducer: {
     Languages,

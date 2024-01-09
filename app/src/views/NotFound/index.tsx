@@ -1,10 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const NotFound: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h2>404 - Página não encontrada</h2>
-      <p>Desculpe, a página que você está procurando não existe.</p>
+      <h2>{t('PageNotFound.Message')}</h2>
     </div>
   );
 };
