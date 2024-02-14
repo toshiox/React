@@ -1,4 +1,6 @@
+import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 import Home from './views/Home/Home'; 
 import Nav from './views/_Layout/NavBar';
 import Footer from './views/_Layout/Footer';
@@ -17,23 +19,24 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {};
     fetchData();
-  },[isLoading]);
+  }, [isLoading]);
   
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       {isLoading ? <Loading /> : null}
       <Nav />
       <Routes>
         <Route path="/" element={<Navigate to="/Home" />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/AboutMe" element={<AboutMe />} />
-        <Route path="/Article/:id?" element={<ArticleContent/>} />
+        <Route path="/Article/:id?" element={<ArticleContent />} />
         <Route path="/TextEditor" element={<TextEditor />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
         <Route path="/not-found" element={<NotFound />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
+
 export default App;

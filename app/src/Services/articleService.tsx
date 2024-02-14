@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export class ArticleService {
   private api;
-  private baseURL = 'http://127.0.0.1:4567/';
+  private baseURL = 'https://code-ruby-d09fcda02656.herokuapp.com/';
 
   constructor() {
     this.api = axios.create({ baseURL: this.baseURL });
@@ -10,15 +10,21 @@ export class ArticleService {
 
   async get(selectedLanguage: string) {
     try {
-      var redis = await this.getRedis(selectedLanguage);
-      if(redis !== undefined && redis.length > 0){
-        return redis;
+      var content = await this.getRedis(selectedLanguage);
+      if (content.length === 0) {
+        const response = await this.getDb(selectedLanguage);
+        content = response.data;
       }
-      return (await this.getDb(selectedLanguage)).data;
+  
+      return content.slice().sort(
+        (a: any, b: any) =>
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      );
     } catch (error) {
       console.error('Erro ao buscar dados:', error);
     }
   }
+  
   async getRedis(selectedLanguage: string) {
     try {
       const response = await axios.get(`${this.baseURL}api/redis/articles/${selectedLanguage}`);

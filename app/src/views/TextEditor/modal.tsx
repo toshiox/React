@@ -99,7 +99,6 @@ const DetailsModal: React.FC<DetailsModalProps> = ({ show, handleClose, rowData,
       language: language,
       createdAt: format(new Date(), 'yyyy-MM-dd HH:mm:ss')
     };
-    console.log(payload)
     let result = await serviceContent.putArticleContent(payload);
     setMessage(result.message);
     setAlertType('success');

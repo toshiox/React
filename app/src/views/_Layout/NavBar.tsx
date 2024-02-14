@@ -39,9 +39,6 @@ function NavBar() {
           <Nav.Link as={Link} to="/AboutMe">
                 {t('Nav.AboutMe')}
             </Nav.Link>
-            <Nav.Link as={Link} to="/TextEditor">
-                {t('Nav.TextEditor')}
-            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Select onChange={(e) => handleLanguageChange(e.target.value)}>

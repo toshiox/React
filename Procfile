@@ -1,0 +1,1 @@
+cd app && web: npm start
