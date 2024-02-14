@@ -1,1 +1,1 @@
-cd app && web: npm start
+web: npm start --prefix app
