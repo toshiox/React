@@ -52,7 +52,7 @@ const Model: React.FC = () => {
   );
 
   const filteredRows = useMemo(() => {
-    return rows.filter(row: any => {
+    return rows.filter(row => {
       return Object.values(row.values).some((value: any) => {
         if (typeof value === 'string') {
           return value.toLowerCase().includes((filter || '').toLowerCase());
