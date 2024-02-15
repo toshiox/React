@@ -21,7 +21,6 @@ function Home(){
     const fetchData = async () => {
         dispatch(loadingActions.setLoading({ isLoading: true }));
         const response = await service.get(currentLanguage);
-        console.log(response);
         setArticles(response); 
         dispatch(loadingActions.setLoading({ isLoading: false }));
     };
