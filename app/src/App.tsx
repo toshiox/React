@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
 import Home from './views/Home/Home'; 
 import Nav from './views/_Layout/NavBar';
 import Footer from './views/_Layout/Footer';

@@ -52,7 +52,7 @@ const Model: React.FC = () => {
   );
 
   const filteredRows = useMemo(() => {
-    return rows.filter(row => {
+    return rows.filter(row: any => {
       return Object.values(row.values).some((value: any) => {
         if (typeof value === 'string') {
           return value.toLowerCase().includes((filter || '').toLowerCase());
@@ -90,20 +90,20 @@ const Model: React.FC = () => {
       </Form.Group>
       <Table striped bordered hover {...getTableProps()} responsive>
         <thead>
-          {headerGroups.map((headerGroup) => (
+          {headerGroups.map((headerGroup): any => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
+              {headerGroup.headers.map((column): any => (
                 <th {...column.getHeaderProps()}>{column.render('Header')}</th>
               ))}
             </tr>
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {filteredRows.map((row) => {
+          {filteredRows.map((row): any => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()} style={{ cursor: 'pointer' }} onClick={() => handleRowClick(row)}>
-                {row.cells.map((cell) => (
+                {row.cells.map((cell): any => (
                   <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                 ))}
               </tr>
