@@ -5,16 +5,14 @@ import reportWebVitals from './reportWebVitals';
 import './Components/languageSwitcher/i18n';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import Home from './views/Home/Home';
+import AboutMe from './views/AboutMe/AboutMe';
+import TextEditor from './views/TextEditor/TextEditor';
+import NotFound from './views/NotFound/index'; 
+import { createBrowserRouter, RouterProvider  }from "react-router-dom";
 import {Provider} from 'react-redux';
 import {store} from './Store/index';
-
-// import Home from './views/Home/Home';
-const Home = React.lazy(() => import("./views/Home/Home"));
-const AboutMe = React.lazy(() => import('./views/AboutMe/AboutMe'));
-const TextEditor = React.lazy(() => import('./views/TextEditor/TextEditor'));
-const NotFound = React.lazy(() => import('./views/NotFound/index'));
-
 
 const router =  createBrowserRouter([
   {
