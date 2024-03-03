@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import DetailsModal from './modal';
 import { Data } from './interfaces';
 import { Table, Form, Row, Col } from 'react-bootstrap';
-import { Column, useTable, useFilters } from 'react-table';
+import { Column, useTable, useFilters, HeaderGroup } from 'react-table';
 import React, { useState, useEffect, useMemo } from 'react';
 import { ArticleService } from '../../Services/articleService';
 
@@ -90,7 +90,7 @@ const Model: React.FC = () => {
       </Form.Group>
       <Table striped bordered hover {...getTableProps()} responsive>
         <thead>
-          {headerGroups.map((headerGroup): any => (
+        {headerGroups.map((headerGroup: HeaderGroup<Data>): any => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column): any => (
                 <th {...column.getHeaderProps()}>{column.render('Header')}</th>
