@@ -10,7 +10,7 @@ import Home from './views/Home/Home';
 import AboutMe from './views/AboutMe/AboutMe';
 import TextEditor from './views/TextEditor/TextEditor';
 import NotFound from './views/NotFound/index'; 
-import { createBrowserRouter, RouterProvider  }from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {store} from './Store/index';
 
