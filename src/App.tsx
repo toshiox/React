@@ -1,16 +1,18 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Home from './views/Home/Home'; 
 import Nav from './views/_Layout/NavBar';
 import Footer from './views/_Layout/Footer';
-import AboutMe from './views/AboutMe/AboutMe';
-import TextEditor from './views/TextEditor/TextEditor';
-import NotFound from './views/NotFound/index'; 
-import ArticleContent from './views/ArticleContent/index'; 
 import Loading from './Components/loading/index'; 
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from './Store/index';
+
+const Home = React.lazy(() => import("./views/Home/Home"));
+const AboutMe = React.lazy(() => import('./views/AboutMe/AboutMe'));
+const TextEditor = React.lazy(() => import('./views/TextEditor/TextEditor'));
+const NotFound = React.lazy(() => import('./views/NotFound/index'));
+const ArticleContent = React.lazy(() => import('./views/ArticleContent/index'));
+
 
 function App() {
   const isLoading = useSelector((state: RootState) => state.Loading.isLoading);
