@@ -1,13 +1,13 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { FaThreads } from "react-icons/fa6";
+// import React from 'react';
+// import { Container, Row, Col } from 'react-bootstrap';
+// import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+// import { FaThreads } from "react-icons/fa6";
 import './css/Footer.css'
 
 const Footer = () => {
   return (
     <footer className="bg-dark text-light py-3">
-      <Container>
+      {/* <Container>
         <Row className="justify-content-center">
           <Col xs="auto">
             <a href="https://github.com/toshiox" target="_blank">
@@ -30,7 +30,7 @@ const Footer = () => {
             </a>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </footer>
   );
 };
